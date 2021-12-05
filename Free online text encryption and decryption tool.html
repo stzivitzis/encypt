@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0033)http://www.alltextencryption.com/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Free online text encryption and decryption tool</title>
+<style type="text/css">
+    body {
+        margin-left: 15%;
+        margin-right: 10%;
+	background-color: #FFFFFF;
+	color: #000000;
+    }
+</style>
+
+<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<script src="./Free online text encryption and decryption tool_files/ca-pub-9869187393402608.js"></script><script type="text/javascript">
+    window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"http://www.google.com/policies/technologies/ads/","theme":"dark-bottom"};
+</script>
+
+<script type="text/javascript" src="./Free online text encryption and decryption tool_files/cookieconsent.latest.min.js"></script>
+<!-- End Cookie Consent plugin -->
+
+
+<meta name="keywords" content="text encryption and decryption, browser, encryption, aes, advanced, system, javascript">
+<meta name="description" content="Free online text encryption and decryption tool">
+
+<!-- Import the external JavaScript modules -->
+<script language="JavaScript" type="text/javascript" src="./Free online text encryption and decryption tool_files/aes.js"></script>
+<script language="JavaScript" type="text/javascript" src="./Free online text encryption and decryption tool_files/entropy.js"></script>
+<script language="JavaScript" type="text/javascript" src="./Free online text encryption and decryption tool_files/aesprng.js"></script>
+<script language="JavaScript" type="text/javascript" src="./Free online text encryption and decryption tool_files/lecuyer.js"></script>
+<script language="JavaScript" type="text/javascript" src="./Free online text encryption and decryption tool_files/md5.js"></script>
+<script language="JavaScript" type="text/javascript" src="./Free online text encryption and decryption tool_files/armour.js"></script>
+<script language="JavaScript" type="text/javascript" src="./Free online text encryption and decryption tool_files/utf-8.js"></script>
+<script language="JavaScript" type="text/javascript" src="./Free online text encryption and decryption tool_files/jscrypt.js"></script>
+
+<!-- +FULL -->
+<script type="text/javascript" language="JavaScript">
+<!-- 
+    /*	Test jig for code activated by the "Test" button when the
+    	debugging console is activated.  */
+
+    function TestSomething() {
+    }
+
+// -->
+</script>
+<!-- -FULL -->
+
+<script type="text/javascript" language="JavaScript">
+<!-- 
+
+    //	Our onLoad handler kicks off the collection of entropy
+
+    function nowLoaded() {    
+    	ce();	    	    	    	// Add time we got here to entropy
+    	mouseMotionEntropy(60);   	// Initialise collection of mouse motion entropy
+    }
+// -->
+</script>
+
+</head>
+
+<body onload="nowLoaded();">
+<h1>Text encryption and decryption tool</h1>
+
+<!-- +FULL -->
+<p>
+<script type="text/javascript"><!--
+google_ad_client = "pub-9869187393402608";
+google_ad_width = 728;
+google_ad_height = 15;
+google_ad_format = "728x15_0ads_al";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "0000DD";
+google_color_text = "444444";
+google_color_url = "999999";
+//-->
+</script>
+<script type="text/javascript" src="./Free online text encryption and decryption tool_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="15" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins><br><br>
+This page allows you to encrypt text with a specified key,
+yielding an encoded message, and decode encrypted messages,
+recovering the original text.  All encryption is performed
+entirely within your Web browser using the JavaScript language
+(which, obviously, must be enabled in order to use this page). 
+<b>Nothing is sent to any Web site when you encrypt or decrypt
+a message!</b> You can, if you wish, download a copy of this
+page and the JavaScript programs it includes to your own
+computer and use it even when you're not connected to the
+Internet. (For this purpose, you may prefer the monolithic "lean" version with
+documentation removed and all JavaScript programs embedded into
+a single Web page.)
+</p>
+<!-- -FULL -->
+
+<form name="key" action="http://www.alltextencryption.com/#" onsubmit="return false;">
+                     <h3>Key</h3>
+<!-- +FULL -->
+<p>     
+Enter the key to be used to encrypt or decrypt the data in the
+field below.  If <b>Text</b> is checked, the key may consist of any
+sequence of up to 1024 characters; for maximum security, if the
+key consists of a sequence of words (many people find it easier
+to remember a phrase instead of a random sequence of
+characters), it should be at least 60 characters in length.  If
+<b>Hexadecimal</b> is checked, the key is given as a sequence of
+hexadecimal digits: <tt>0</tt>-<tt>9</tt>,
+<tt>a</tt>-<tt>f</tt> (or <tt>A</tt>-<tt>F</tt>), which should
+be 32 bytes (64 hexadecimal digits) in length for maximum
+security.  The <b>Generate</b> button may be used to create a key in
+either text or hexadecimal format (depending on which button is
+checked) sufficiently long to provide maximum security using a
+high quality pseudorandom number generator seeded from the time
+the page was loaded, the time you pressed the <b>Generate</b>
+button, and the time of keystrokes and various other events
+since the page was loaded.  You can generate lists of keys
+suitable for exchanging with correspondents using our companion
+Pass Phrase Generator
+page.
+</p>
+
+<div style="margin-top:20px;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-9869187393402608";
+google_ad_width = 728;
+google_ad_height = 15;
+google_ad_format = "728x15_0ads_al";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "0000DD";
+google_color_text = "444444";
+google_color_url = "999999";
+//-->
+</script>
+<script type="text/javascript" src="./Free online text encryption and decryption tool_files/show_ads.js">
+</script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="15" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+
+<!-- -FULL -->
+
+<p align="center">
+<input type="text" name="text" size="80" maxlength="1024" style="background-color: rgb(255, 255, 200); color: #000000; font-family: monospace;" onfocus="ce();" onblur="ce();" onkeydown="ce();">
+<br>
+<input type="radio" checked="checked" name="keytype">&nbsp;Text
+&nbsp;
+<input type="radio" name="keytype">&nbsp;Hexadecimal
+&nbsp;
+<input type="button" value=" Generate " onclick="Generate_key();">
+&nbsp;
+<input type="button" value=" Clear " onclick="document.key.text.value = &#39;&#39;;">
+&nbsp;
+<input type="button" value=" Select " onclick="document.key.text.select();">
+</p>
+</form>
+
+<form name="plain" action="http://www.alltextencryption.com/#" onsubmit="return false;">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-9869187393402608";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "0000DD";
+google_color_text = "444444";
+google_color_url = "999999";
+//-->
+</script>
+<script type="text/javascript" src="./Free online text encryption and decryption tool_files/show_ads.js"></script><ins id="aswift_2_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+
+
+                     <h3>Plain Text</h3>
+		     
+<!-- +FULL -->
+<p>
+Enter or paste the text to be encrypted into the following box.  If
+you wish to encrypt a binary file (for example, an image or an
+audio file), use a utility like Base64 to encode it as text before encryption.  Press the
+<b>Encrypt</b> button to encrypt the text with the above key; the
+encrypted text will be placed in the <b>Cipher Text</b> box, encoded
+as text with the <b>Encoding</b> you've selected.  If you prefer to
+camouflage your message as (nonsense) English text, first
+encrypt it in any of the encodings, then select, copy, and
+paste the text into our Steganography (hidden writing)
+page.
+</p>
+<!-- -FULL -->
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-9869187393402608";
+google_ad_width = 728;
+google_ad_height = 15;
+google_ad_format = "728x15_0ads_al";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "0000DD";
+google_color_text = "444444";
+google_color_url = "999999";
+//-->
+</script>
+<script type="text/javascript" src="./Free online text encryption and decryption tool_files/show_ads.js">
+</script><ins id="aswift_3_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="15" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;"></iframe></ins></ins><br><br>
+
+<p align="center">
+<textarea name="text" rows="16" cols="80" style="background-color: rgb(200, 255, 200); color: #000000;" onfocus="ce();" onblur="ce();" onkeydown="ce();"></textarea>
+<br>
+<input type="button" name="encrypt" value=" Encrypt " onclick="Encrypt_text();">
+&nbsp;
+<input type="button" value=" Clear " onclick="document.plain.text.value = &#39;&#39;;">
+&nbsp;
+<input type="button" value=" Select " onclick="document.plain.text.select();">
+<br>
+<b>Encoding:</b>&nbsp;
+<input type="radio" checked="checked" name="encoding">&nbsp;Codegroup
+&nbsp;
+<input type="radio" name="encoding">&nbsp;Hexadecimal
+&nbsp;
+<input type="radio" name="encoding">&nbsp;Base&nbsp;64
+</p>
+</form>
+
+<form name="cipher" action="http://www.alltextencryption.com/#" onsubmit="return false;">
+
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-9869187393402608";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "0000DD";
+google_color_text = "444444";
+google_color_url = "999999";
+//-->
+</script>
+<script type="text/javascript" src="./Free online text encryption and decryption tool_files/show_ads.js"></script><ins id="aswift_4_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_4_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+
+
+                     <h3>Cipher Text</h3>
+		     
+<!-- +FULL -->
+<p>
+To decrypt an enciphered message, paste it in the box below,
+enter the key with which it was encrypted in the <b>Key</b> box at
+the top, and press the <b>Decrypt</b> button.  The decrypted text
+will be placed in the <b>Plain Text</b> box above.  Text before and
+after the encrypted message is ignored, and the encoding used
+by the message is determined automatically.  You can decrypt
+only one message at a time; if more than one encrypted message
+is pasted into the box below, only the first will be decrypted.
+</p>
+<!-- -FULL -->
+
+<p align="center">
+<textarea name="text" rows="16" cols="80" style="background-color: rgb(255, 200, 200); color: #000000;" onfocus="ce();" onblur="ce();" onkeydown="ce();"></textarea>
+<br>
+<input type="button" name="decrypt" value=" Decrypt " onclick="Decrypt_text();">
+&nbsp;
+<input type="button" value=" Clear " onclick="document.cipher.text.value = &#39;&#39;;">
+&nbsp;
+<input type="button" value=" Select " onclick="document.cipher.text.select();">
+</p>
+</form>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-9869187393402608";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "0000DD";
+google_color_text = "444444";
+google_color_url = "999999";
+//-->
+</script>
+<script type="text/javascript" src="./Free online text encryption and decryption tool_files/show_ads.js"></script><ins id="aswift_5_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_5_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+
+<script type="text/javascript" language="JavaScript">
+<!--
+/*  Dump one or more (variable_name, value) pairs given as arguments
+    to the function.  */
+
+function dump()
+{
+    var t = "", i;
+    
+    for (i = 0; i < arguments.length; i += 2) {
+    	if (t.length > 0) {
+	    t += ", ";
+	}
+	t += arguments[i] + " = " + arguments[i + 1];
+    }
+    document.debug.log.value += t + "\n";
+}
+-->
+</script>
+
+
+
+<br>
+<hr>
+
+
+
+
+
+
+<style>p a{color:inherit;}</style>
+<p>Menu: 
+
+<a href="http://www.alltextencryption.com/bussiness.php">Bussiness Blogging</a> | 
+<a href="http://www.alltextencryption.com/online-income.php">Online income</a> | 
+<a href="http://www.alltextencryption.com/affiliate-marketer.php">Affiliate marketer</a>
+
+<style>
+li{list-style-type:none;font-size:12px;padding: 0px;margin: 0px; padding-right:20px; float:left;} li a{color:black;}
+</style>
+</p><p>Credit to the author:  <a href="https://www.fourmilab.ch/javascrypt/javascrypt.html">https://www.fourmilab.ch/javascrypt/javascrypt.html</a><br>
+by John Walker<br>
+December, 2005 <br>
+This document is in the public domain.
+<br>
+</p><hr>
+<p></p><li>Partners:</li>
+<p></p>
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=8867923; 
+var sc_invisible=1; 
+var sc_security="a711f2f5"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script><script type="text/javascript" src="./Free online text encryption and decryption tool_files/counter.js"></script>
+<noscript>&lt;div class="statcounter"&gt;&lt;img class="statcounter"
+src="http://c.statcounter.com/8867923/0/a711f2f5/1/"&gt;&lt;/div&gt;</noscript>
+<!-- End of StatCounter Code for Default Guide -->
+
+
+
+</body></html>
